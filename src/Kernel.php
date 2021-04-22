@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * This file is part of the Event project.
+ * (c) Clivern <hello@clivern.com>
+ */
+
 namespace App;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
