@@ -107,6 +107,12 @@ run:
 	$(SYMFONY) serve
 
 
+## openapi: Build API
+openapi:
+	@echo "\n==> Build API:"
+	$(PHP) ./bin/swagger
+
+
 ## installed: Show a list of installed packages
 installed:
 	@echo "\n==> Show a list of installed packages:"

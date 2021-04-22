@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+require dirname(__DIR__) . "/vendor/autoload.php";
+
+$openapi = \OpenApi\scan(dirname(__DIR__) . "/src");
+
+header('Content-Type: application/x-yaml');
+
+file_put_contents(dirname(__DIR__) . "/open_api.yaml", $openapi->toYaml());

@@ -1,0 +1,13 @@
+openapi: 3.0.0
+info:
+  title: 'Events API'
+  contact:
+    email: hello@clivern.com
+  version: 0.1.0
+paths:
+  /:
+    get:
+      operationId: 'App\Controller\HealthController::index'
+      responses:
+        '200':
+          description: 'Application Health'

@@ -42,8 +42,6 @@ class UserRepository extends ServiceEntityRepository
 
     /**
      * Create a new User.
-     *
-     * @return User
      */
     public function createOne(string $name): ?User
     {

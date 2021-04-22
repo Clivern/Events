@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use OpenApi\Annotations as OA;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,11 +34,22 @@ class HealthController extends AbstractController
 
     /**
      * @Route("/", name="health")
+     *
+     * @OA\Info(
+     *   title="Events API",
+     *   version="0.1.0",
+     *   @OA\Contact(
+     *     email="hello@clivern.com"
+     *   )
+     * )
+     *
+     * @OA\Get(
+     *     path="/",
+     *     @OA\Response(response="200", description="Application Health")
+     * )
      */
     public function index(): Response
     {
-        $this->userRepository->createOne('joe');
-
         return $this->json([
             'status' => 'ok',
         ]);
