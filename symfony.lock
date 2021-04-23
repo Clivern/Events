@@ -1,7 +1,4 @@
 {
-    "beberlei/assert": {
-        "version": "v3.3.1"
-    },
     "brick/math": {
         "version": "0.9.2"
     },
@@ -93,6 +90,9 @@
     },
     "doctrine/sql-formatter": {
         "version": "1.1.1"
+    },
+    "eventsauce/eventsauce": {
+        "version": "0.8.2"
     },
     "friendsofphp/php-cs-fixer": {
         "version": "2.17",

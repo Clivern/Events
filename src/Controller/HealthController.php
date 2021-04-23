@@ -3,13 +3,12 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Event project.
+ * This file is part of the Clivern/Events project.
  * (c) Clivern <hello@clivern.com>
  */
 
 namespace App\Controller;
 
-use App\Repository\UserRepository;
 use OpenApi\Annotations as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,18 +19,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class HealthController extends AbstractController
 {
-    /** @var UserRepository */
-    private $userRepository;
-
-    /**
-     * Class Constructor.
-     */
-    public function __construct(
-        UserRepository $userRepository
-    ) {
-        $this->userRepository = $userRepository;
-    }
-
     /**
      * @Route("/", name="health")
      *
@@ -43,9 +30,19 @@ class HealthController extends AbstractController
      *   )
      * )
      *
+     * @OA\Schema(
+     *   schema="Health",
+     *   @OA\Property(property="status", type="string")
+     * )
+     *
      * @OA\Get(
      *     path="/",
-     *     @OA\Response(response="200", description="Application Health")
+     *     @OA\Response(
+     *       response="200",
+     *       description="Application is up",
+     *       @OA\JsonContent(ref="#/components/schemas/Health")
+     *     ),
+     *     @OA\Response(response="500", description="Application is down")
      * )
      */
     public function index(): Response

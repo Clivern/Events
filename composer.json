@@ -1,6 +1,6 @@
 {
     "name": "clivern/events",
-    "description": "CQRS tryout with Symfony 5",
+    "description": "Event Sourcing tryout with Symfony 5",
     "keywords": [
         "clivern",
         "events"
@@ -18,8 +18,8 @@
         "doctrine/doctrine-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.8",
-        "prooph/common": "^4.5",
-        "prooph/event-sourcing": "^5.7",
+        "eventsauce/eventsauce": "^0.8.2",
+        "ramsey/uuid": "^4.1",
         "symfony/console": "5.2.*",
         "symfony/dotenv": "5.2.*",
         "symfony/event-dispatcher": "5.2.*",

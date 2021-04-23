@@ -24,3 +24,6 @@ jobs:
           composer validate
           export APP_ENV=test
           make ci
+          make fix
+          make openapi
+          git diff --exit-code

@@ -5,9 +5,98 @@ info:
     email: hello@clivern.com
   version: 0.1.0
 paths:
+  /v1/basket:
+    post:
+      summary: 'Create a basket'
+      operationId: 'App\Controller\BasketController::createAction'
+      responses:
+        '200':
+          description: 'a New Basket Created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Basket'
+  '/v1/basket/{uuid}':
+    get:
+      summary: 'Get a basket with UUID'
+      operationId: 'App\Controller\BasketController::indexAction'
+      parameters:
+        -
+          $ref: '#/components/parameters/uuid'
+      responses:
+        '200':
+          description: 'Get basket Info'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Basket'
+  '/v1/basket/{uuid}/product/{id}':
+    post:
+      summary: 'Add a product to a basket'
+      operationId: 'App\Controller\BasketController::addProductAction'
+      parameters:
+        -
+          $ref: '#/components/parameters/uuid'
+        -
+          $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: 'Product added'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Basket'
+    delete:
+      summary: 'Remove a product from a basket'
+      operationId: 'App\Controller\BasketController::removeProductAction'
+      parameters:
+        -
+          $ref: '#/components/parameters/uuid'
+        -
+          $ref: '#/components/parameters/id'
+      responses:
+        '204':
+          description: 'Product removed'
   /:
     get:
       operationId: 'App\Controller\HealthController::index'
       responses:
         '200':
-          description: 'Application Health'
+          description: 'Application is up'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+        '500':
+          description: 'Application is down'
+components:
+  schemas:
+    Basket:
+      properties:
+        id:
+          description: 'Basket Id'
+          type: string
+        products:
+          description: 'Basket Products'
+          type: array
+          items:
+            type: integer
+      type: object
+    Health:
+      properties:
+        status:
+          type: string
+      type: object
+  parameters:
+    uuid:
+      name: uuid
+      in: path
+      required: true
+      schema:
+        type: string
+    id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer

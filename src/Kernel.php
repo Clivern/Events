@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Event project.
+ * This file is part of the Clivern/Events project.
  * (c) Clivern <hello@clivern.com>
  */
 

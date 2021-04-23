@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Event project.
+ * This file is part of the Clivern/Events project.
  * (c) Clivern <hello@clivern.com>
  */
 
@@ -20,8 +20,12 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class UserRepository extends ServiceEntityRepository
 {
+    /** @var EventDispatcherInterface */
     private $eventDispatcher;
 
+    /**
+     * Class constructor.
+     */
     public function __construct(ManagerRegistry $registry, EventDispatcherInterface $eventDispatcher)
     {
         parent::__construct($registry, User::class);
