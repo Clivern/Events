@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12220d1bdec7fad22efa519bf135907a",
+    "content-hash": "6788358047e3d21f7750baebebde8313",
     "packages": [
         {
             "name": "brick/math",
@@ -1478,30 +1478,98 @@
             "time": "2020-07-30T16:57:33+00:00"
         },
         {
-            "name": "eventsauce/eventsauce",
-            "version": "0.8.2",
+            "name": "eventsauce/clock",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/EventSaucePHP/EventSauce.git",
-                "reference": "3c413662af7e37c7a2ca4fd2b1cfe9365a7b6dae"
+                "url": "https://github.com/EventSaucePHP/Clock.git",
+                "reference": "0b740928a2bdbcbec836c912d9bee22b0c58ddb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EventSaucePHP/EventSauce/zipball/3c413662af7e37c7a2ca4fd2b1cfe9365a7b6dae",
-                "reference": "3c413662af7e37c7a2ca4fd2b1cfe9365a7b6dae",
+                "url": "https://api.github.com/repos/EventSaucePHP/Clock/zipball/0b740928a2bdbcbec836c912d9bee22b0c58ddb0",
+                "reference": "0b740928a2bdbcbec836c912d9bee22b0c58ddb0",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2|^8.0",
-                "ramsey/uuid": "^3|^4",
-                "symfony/yaml": "^3.2|^4.0|^5.0"
+                "php": "^8.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.15",
-                "phpstan/phpstan": "^0.11.16|^0.12.52",
-                "phpunit/phpunit": "^7.0|^8.0|^9.3"
+                "friendsofphp/php-cs-fixer": "^2.18.4",
+                "phpstan/phpstan": "^0.12.82",
+                "phpunit/phpunit": "^9.4"
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EventSauce\\Clock\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Consume time from a Clock",
+            "keywords": [
+                "EventSauce",
+                "clock",
+                "time"
+            ],
+            "support": {
+                "issues": "https://github.com/EventSaucePHP/Clock/issues",
+                "source": "https://github.com/EventSaucePHP/Clock/tree/1.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/frankdejonge",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-05-31T07:45:06+00:00"
+        },
+        {
+            "name": "eventsauce/eventsauce",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EventSaucePHP/EventSauce.git",
+                "reference": "772f0c3f969c8428daff3acc2d46ecb085aa5677"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/EventSaucePHP/EventSauce/zipball/772f0c3f969c8428daff3acc2d46ecb085aa5677",
+                "reference": "772f0c3f969c8428daff3acc2d46ecb085aa5677",
+                "shasum": ""
+            },
+            "require": {
+                "eventsauce/clock": "^1.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "nikic/php-parser": "^v4.10.4",
+                "phpstan/phpstan": "^0.12.83",
+                "phpunit/phpunit": "^9.4",
+                "ramsey/uuid": "^4.0",
+                "symfony/yaml": "^5.0 | ^6.0"
+            },
+            "suggest": {
+                "eventsauce/code-generation": "Code generation for EventSauce",
+                "eventsauce/doctrine-message-repository": "Doctrine implementation of the message repository",
+                "eventsauce/test-utilities": "Base test tooling for testing aggregates"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-version/2.0": "2.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "EventSauce\\EventSourcing\\": "src/"
@@ -1517,10 +1585,10 @@
                     "email": "info@frenky.net"
                 }
             ],
-            "description": "Event sourcing library.",
+            "description": "A pragmatic event sourcing library for PHP with a focus on developer experience.",
             "support": {
                 "issues": "https://github.com/EventSaucePHP/EventSauce/issues",
-                "source": "https://github.com/EventSaucePHP/EventSauce/tree/0.8.2"
+                "source": "https://github.com/EventSaucePHP/EventSauce/tree/2.2.1"
             },
             "funding": [
                 {
@@ -1528,7 +1596,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-01T15:25:34+00:00"
+            "time": "2022-05-28T13:47:13+00:00"
         },
         {
             "name": "friendsofphp/proxy-manager-lts",
@@ -6064,5 +6132,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
