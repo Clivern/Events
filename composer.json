@@ -19,7 +19,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.8",
         "eventsauce/eventsauce": "^0.8.2",
-        "ramsey/uuid": "^4.1",
+        "ramsey/uuid": "4.5.1",
         "symfony/console": "5.2.*",
         "symfony/dotenv": "5.2.*",
         "symfony/event-dispatcher": "5.2.*",
